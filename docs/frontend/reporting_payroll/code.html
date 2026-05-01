@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payroll Reports - The Cultivated Horizon</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#00210e",
+                        "background": "#fafaf5",
+                        "surface-bright": "#fafaf5",
+                        "inverse-surface": "#2f312e",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#00201f",
+                        "tertiary-fixed-dim": "#a1cfcc",
+                        "primary-container": "#3f6449",
+                        "on-primary-container": "#b5dfbd",
+                        "tertiary-fixed": "#bdebe8",
+                        "on-tertiary-fixed-variant": "#214e4c",
+                        "outline": "#727970",
+                        "primary-fixed": "#c2edca",
+                        "surface-container-high": "#e8e8e3",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c1c9be",
+                        "secondary-container": "#fed3c7",
+                        "on-primary-fixed-variant": "#294e35",
+                        "on-secondary-container": "#795950",
+                        "primary-fixed-dim": "#a7d1af",
+                        "secondary": "#77574d",
+                        "surface-container-low": "#f4f4ef",
+                        "surface-container": "#eeeee9",
+                        "on-surface": "#1a1c19",
+                        "surface-container-highest": "#e3e3de",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#414941",
+                        "on-background": "#1a1c19",
+                        "inverse-on-surface": "#f1f1ec",
+                        "on-tertiary-container": "#b0dfdb",
+                        "surface-variant": "#e3e3de",
+                        "primary": "#274c33",
+                        "tertiary-container": "#386462",
+                        "surface-dim": "#dadad5",
+                        "inverse-primary": "#a7d1af",
+                        "secondary-fixed": "#ffdbd0",
+                        "secondary-fixed-dim": "#e7bdb1",
+                        "on-secondary-fixed-variant": "#5d4037",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#41674b",
+                        "surface": "#fafaf5",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#1f4c4a",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#2c160e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Public Sans"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 left-0 sticky flex flex-col h-full py-6 bg-[#f4f4ef] dark:bg-stone-900 no-border bg-gradient-to-r from-transparent to-[#f4f4ef]">
+<div class="px-6 mb-10">
+<h1 class="text-lg font-black text-[#386641] dark:text-emerald-500">GreenField Operations</h1>
+<p class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px] text-stone-500">Admin Module</p>
+</div>
+<nav class="flex-1">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center text-stone-600 dark:text-stone-400 py-3 pl-10 hover:text-[#386641] transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center text-stone-600 dark:text-stone-400 py-3 pl-10 hover:text-[#386641] transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3">group</span>
+<span class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]">Staff Portal</span>
+</a>
+</li>
+<li>
+<a class="flex items-center text-stone-600 dark:text-stone-400 py-3 pl-10 hover:text-[#386641] transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3">calendar_month</span>
+<span class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]">Roster</span>
+</a>
+</li>
+<li>
+<a class="flex items-center text-stone-600 dark:text-stone-400 py-3 pl-10 hover:text-[#386641] transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3">timer</span>
+<span class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]">Clocking Station</span>
+</a>
+</li>
+<li>
+<a class="flex items-center bg-[#ffffff] dark:bg-stone-800 text-[#386641] dark:text-emerald-400 rounded-l-full ml-4 py-3 pl-6 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3">analytics</span>
+<span class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]">Payroll Reports</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="mt-auto px-6 space-y-4">
+<button class="w-full py-3 bg-[#386641] text-white font-bold rounded-lg hover:opacity-90 transition-opacity uppercase text-[12px] tracking-widest">
+                Clock In/Out
+            </button>
+<div class="pt-6 border-t border-outline-variant/20">
+<a class="flex items-center text-stone-600 dark:text-stone-400 py-2 hover:text-[#386641]" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]">Settings</span>
+</a>
+<a class="flex items-center text-stone-600 dark:text-stone-400 py-2 hover:text-[#386641]" href="#">
+<span class="material-symbols-outlined mr-3">contact_support</span>
+<span class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="w-full top-0 flex justify-between items-center px-8 py-4 w-full bg-[#fafaf5] dark:bg-stone-950 font-['Public_Sans'] text-body-md tracking-tight">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-[#386641] dark:text-emerald-500">The Cultivated Horizon</span>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400">search</span>
+<input class="pl-10 pr-4 py-2 bg-[#f4f4ef] border-none rounded-full focus:ring-2 focus:ring-[#386641] w-64 text-sm transition-all" placeholder="Search data..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-stone-500 hover:bg-stone-200 p-2 rounded-full transition-colors">notifications</button>
+<button class="material-symbols-outlined text-stone-500 hover:bg-stone-200 p-2 rounded-full transition-colors">help</button>
+</div>
+<div class="flex items-center gap-3 pl-6 border-l border-outline-variant/30">
+<div class="text-right">
+<p class="text-sm font-bold text-[#386641]">Beerenberg Admin</p>
+<p class="text-[10px] uppercase tracking-wider text-stone-500">Payroll Lead</p>
+</div>
+<img alt="Manager Profile" class="w-10 h-10 rounded-full object-cover" data-alt="close-up portrait of a professional manager with a friendly expression in a modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9GlYAlRd2EAfTHVBvpYCVNtXls-oHar82wIlgLCsAqiTYCeYK2ErqT_u0BAnW0piHe5gHQ4cPbJohcPdAxxyWrqszYEkGY_SLQ96AShH4wg6os9VjutZqYZ8AKrC8sSX0lBVcoi_WnhwTP0NXzJK8QVnIdZB2ZeTbDpuxWq_TpQhZ-IH4K2URC5kY7Mi4goPeSk2nt92XGT0_qUffGoqg_9mgs6hqTGuWBEArLpB7DVl8jxJtrOY6ZfAI65R5baMx_v5SuadmDcJ2"/>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="p-8 space-y-10">
+<!-- Header & Filter Row -->
+<div class="flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="space-y-1">
+<h2 class="text-4xl font-extrabold tracking-tighter text-primary">Payroll Reporting</h2>
+<p class="text-on-surface-variant font-medium">Beerenberg Family Farm — Fortnightly Cycle</p>
+</div>
+<div class="flex flex-wrap gap-4 items-center">
+<div class="bg-surface-container-low p-1 rounded-xl flex items-center">
+<div class="px-4 py-2">
+<label class="block text-[10px] uppercase font-bold tracking-widest text-outline">Start Date</label>
+<input class="bg-transparent border-none p-0 focus:ring-0 text-sm font-bold text-on-surface" type="date" value="2023-10-01"/>
+</div>
+<div class="h-8 w-px bg-outline-variant/30 mx-2"></div>
+<div class="px-4 py-2">
+<label class="block text-[10px] uppercase font-bold tracking-widest text-outline">End Date</label>
+<input class="bg-transparent border-none p-0 focus:ring-0 text-sm font-bold text-on-surface" type="date" value="2023-10-14"/>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-6 py-4 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/10 hover:scale-[1.02] active:scale-98 transition-all">
+<span class="material-symbols-outlined">payments</span>
+                        Generate Pay Slips
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Time Information -->
+<div class="md:col-span-7 bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl">schedule</span>
+</div>
+<h3 class="text-[10px] uppercase tracking-[0.2em] font-black text-primary mb-8">Time Information</h3>
+<div class="grid grid-cols-2 gap-12">
+<div>
+<p class="text-5xl font-black tracking-tighter text-on-surface mb-2">1,482.5</p>
+<p class="text-sm font-bold text-on-surface-variant">Total Hours Logged</p>
+<div class="mt-4 flex items-center gap-2 text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md w-fit text-xs font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                +4.2% vs Last Cycle
+                            </div>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-3">
+<span class="text-sm text-on-surface-variant">Ordinary Hours</span>
+<span class="font-bold">1,240.0</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-3">
+<span class="text-sm text-on-surface-variant">Overtime (1.5x)</span>
+<span class="font-bold">184.5</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-3">
+<span class="text-sm text-on-surface-variant">Public Holiday</span>
+<span class="font-bold text-tertiary">58.0</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pay Information -->
+<div class="md:col-span-5 bg-primary-container text-on-primary-container p-8 rounded-3xl shadow-xl flex flex-col justify-between">
+<div>
+<h3 class="text-[10px] uppercase tracking-[0.2em] font-black text-on-primary-container/70 mb-2">Pay Information</h3>
+<p class="text-xs font-medium mb-8">Estimated Wage Costs (Gross)</p>
+<p class="text-6xl font-black tracking-tighter">$42,892.40</p>
+</div>
+<div class="mt-8 pt-8 border-t border-on-primary-container/20">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-[10px] uppercase font-bold tracking-widest text-on-primary-container/70">Next Pay Date</p>
+<p class="text-lg font-bold">Friday, Oct 20</p>
+</div>
+<button class="bg-surface-container-lowest text-primary p-3 rounded-full hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">receipt_long</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Exception Report -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-[10px] uppercase tracking-[0.2em] font-black text-error">Exception Report</h3>
+<span class="px-3 py-1 bg-error-container text-on-error-container text-[10px] font-bold rounded-full">8 ITEMS REQUIRE ATTENTION</span>
+</div>
+<div class="bg-surface-container-low rounded-3xl overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high">
+<th class="px-6 py-4 text-[10px] uppercase font-black tracking-widest text-on-surface-variant">Staff Member</th>
+<th class="px-6 py-4 text-[10px] uppercase font-black tracking-widest text-on-surface-variant">Exception Type</th>
+<th class="px-6 py-4 text-[10px] uppercase font-black tracking-widest text-on-surface-variant">Date</th>
+<th class="px-6 py-4 text-[10px] uppercase font-black tracking-widest text-on-surface-variant">Detail</th>
+<th class="px-6 py-4 text-[10px] uppercase font-black tracking-widest text-on-surface-variant">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="bg-surface-container-lowest/40 hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-xs">TH</div>
+<span class="font-bold text-sm">Thomas H.</span>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="px-2 py-1 bg-error-container/30 text-error text-[10px] font-bold rounded">CLOCK-OUT MISSING</span>
+</td>
+<td class="px-6 py-6 text-sm text-on-surface-variant">Oct 12, 2023</td>
+<td class="px-6 py-6 text-sm">Shift started 06:00. No exit record.</td>
+<td class="px-6 py-6">
+<button class="text-primary font-bold text-xs hover:underline">Resolve</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-bold text-xs">MA</div>
+<span class="font-bold text-sm">Maria A.</span>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="px-2 py-1 bg-orange-100 text-orange-800 text-[10px] font-bold rounded">MISSED BREAK</span>
+</td>
+<td class="px-6 py-6 text-sm text-on-surface-variant">Oct 11, 2023</td>
+<td class="px-6 py-6 text-sm">7.5hr shift with zero break intervals.</td>
+<td class="px-6 py-6">
+<button class="text-primary font-bold text-xs hover:underline">Resolve</button>
+</td>
+</tr>
+<tr class="bg-surface-container-lowest/40 hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant font-bold text-xs">SK</div>
+<span class="font-bold text-sm">Samuel K.</span>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="px-2 py-1 bg-stone-200 text-stone-600 text-[10px] font-bold rounded">UNROSTERED</span>
+</td>
+<td class="px-6 py-6 text-sm text-on-surface-variant">Oct 10, 2023</td>
+<td class="px-6 py-6 text-sm">Clocked in at 05:45. No rostered shift.</td>
+<td class="px-6 py-6">
+<button class="text-primary font-bold text-xs hover:underline">Resolve</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-xs">EJ</div>
+<span class="font-bold text-sm">Elena J.</span>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="px-2 py-1 bg-error-container/30 text-error text-[10px] font-bold rounded">CLOCK-OUT MISSING</span>
+</td>
+<td class="px-6 py-6 text-sm text-on-surface-variant">Oct 09, 2023</td>
+<td class="px-6 py-6 text-sm">System auto-closed after 12h.</td>
+<td class="px-6 py-6">
+<button class="text-primary font-bold text-xs hover:underline">Resolve</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Visual Support Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
+<div class="rounded-3xl overflow-hidden h-64 relative group shadow-2xl">
+<img alt="Beerenberg Farm Fields" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="expansive lush green farm fields with tidy rows of crops under a soft morning mist and orange sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmVpYMrta86fKFyUv0nVkE7EismjvI7OiU3aSE8hgLSsjzEWPLQZTuBsPpMPJ8IfGBO2tdLcP1j0K0dEpWyatGrXk07_us74Ld6NPAH_34mgRtynqVytLj9L-G-OETPT-7bNsQF5GOuUYBGkKD6XQDxGKB098nX-KWDsCRdym6LjGRSHGdzZwVxFRarfND8u6dmg6fO8HscUKdDbNQelY0KKeXU7bGy2ZobZeVqf706CyYjuu8roWdHqQdf4cIY1d3xi5pQqhrHnzi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+<p class="text-white font-bold text-xl tracking-tight">Labor Efficiency Tracking</p>
+<p class="text-white/70 text-sm">Reviewing seasonal yield vs labor cost trends.</p>
+</div>
+</div>
+<div class="rounded-3xl overflow-hidden h-64 relative group shadow-2xl">
+<img alt="Financial Planning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="top-down view of a modern desk with a tablet displaying charts, organic textures of wood, and a small green plant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs2oPCLhnRvY6eFNVOsWyxkigC4eExAqDv-px50cVn6_tUsBP4Xk-ix27XEschLFF7uG7HlLBg1LGVM5G-xhGhnYDhM0QbiuW8F7FMuzUX9FZrypzckEgul6fplxqaWzTqTJ26AiG7vBKwppJxuduQou9UbbQFtk5t_GW-7RNUtuqr8zGyxTxWzNWxs69IJEVxJ29D_dZVr7e0aVuPxEN-Pwyw-E4jJ81mKQzpWDcK6YMH4bTuqTNHib8AKAH86Lr5LEA7FzjWo9hO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+<p class="text-white font-bold text-xl tracking-tight">Payroll Compliance</p>
+<p class="text-white/70 text-sm">Automated reconciliation with Fair Work regulations.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

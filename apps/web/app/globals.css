@@ -1,0 +1,258 @@
+:root {
+  --background: #fafaf5;
+  --surface: #fafaf5;
+  --surface-container-low: #f4f4ef;
+  --surface-container-lowest: #ffffff;
+  --surface-variant: #e3e3de;
+  --on-surface: #1a1c19;
+  --on-surface-variant: #414941;
+  --primary: #274c33;
+  --primary-container: #3f6449;
+  --on-primary: #ffffff;
+  --tertiary: #1f4c4a;
+  --tertiary-container: #386462;
+  --error: #ba1a1a;
+  --outline-variant: #c1c9be;
+  --shadow: 0 24px 60px -36px rgba(20, 35, 24, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at 20% 0%, #f8fbf8 0%, var(--background) 42%);
+  color: var(--on-surface);
+  font-family: 'Public Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+select,
+button,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 248px 1fr;
+}
+
+.side-nav {
+  background: linear-gradient(180deg, #f8f9f3 0%, var(--surface-container-low) 100%);
+  padding: 1.2rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.brand {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+}
+
+.nav-link {
+  display: block;
+  padding: 0.72rem 0.9rem;
+  border-radius: 0.8rem;
+  color: var(--on-surface-variant);
+  font-weight: 650;
+  font-size: 0.86rem;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.nav-link:hover {
+  background: var(--surface-container-lowest);
+  transform: translateX(3px);
+}
+
+.nav-link.active {
+  background: var(--surface-container-lowest);
+  color: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+.main-shell {
+  padding: 1rem 1.2rem 2rem;
+}
+
+.top-shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+}
+
+.search {
+  width: min(520px, 100%);
+  background: var(--surface-container-low);
+  border: 0;
+  border-radius: 999px;
+  padding: 0.72rem 1rem;
+}
+
+.page {
+  margin-top: 1rem;
+  background: var(--surface);
+  border-radius: 1rem;
+  padding: 1.1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.section {
+  background: var(--surface-container-low);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.panel {
+  background: var(--surface-container-lowest);
+  border-radius: 0.9rem;
+  padding: 0.9rem;
+}
+
+.grid-2,
+.grid-3,
+.grid-4 {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.kpi {
+  padding: 1rem;
+  border-radius: 0.9rem;
+  background: var(--surface-container-lowest);
+  box-shadow: var(--shadow);
+}
+
+.primary-button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 0.8rem;
+  color: var(--on-primary);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+  padding: 0.75rem 1rem;
+}
+
+.secondary-button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 0.7rem;
+  color: var(--on-surface);
+  background: var(--surface-variant);
+  padding: 0.65rem 0.9rem;
+  font-weight: 700;
+}
+
+.table-wrap {
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.65rem;
+  font-size: 0.9rem;
+}
+
+th {
+  color: var(--on-surface-variant);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+input,
+select,
+textarea {
+  border: 0;
+  background: var(--surface-container-low);
+  border-radius: 0.65rem;
+  padding: 0.6rem 0.72rem;
+  min-height: 40px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: #d8eee4;
+  color: var(--primary);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.overlay {
+  background: rgba(56, 100, 98, 0.16);
+  backdrop-filter: blur(7px);
+  border-radius: 0.9rem;
+  padding: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .side-nav {
+    height: auto;
+    position: static;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .main-shell {
+    padding: 0.7rem;
+  }
+
+  .page {
+    padding: 0.8rem;
+  }
+}

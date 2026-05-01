@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Cultivated Horizon - GreenField Operations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#00210e",
+                        "background": "#fafaf5",
+                        "surface-bright": "#fafaf5",
+                        "inverse-surface": "#2f312e",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#00201f",
+                        "tertiary-fixed-dim": "#a1cfcc",
+                        "primary-container": "#3f6449",
+                        "on-primary-container": "#b5dfbd",
+                        "tertiary-fixed": "#bdebe8",
+                        "on-tertiary-fixed-variant": "#214e4c",
+                        "outline": "#727970",
+                        "primary-fixed": "#c2edca",
+                        "surface-container-high": "#e8e8e3",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c1c9be",
+                        "secondary-container": "#fed3c7",
+                        "on-primary-fixed-variant": "#294e35",
+                        "on-secondary-container": "#795950",
+                        "primary-fixed-dim": "#a7d1af",
+                        "secondary": "#77574d",
+                        "surface-container-low": "#f4f4ef",
+                        "surface-container": "#eeeee9",
+                        "on-surface": "#1a1c19",
+                        "surface-container-highest": "#e3e3de",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#414941",
+                        "on-background": "#1a1c19",
+                        "inverse-on-surface": "#f1f1ec",
+                        "on-tertiary-container": "#b0dfdb",
+                        "surface-variant": "#e3e3de",
+                        "primary": "#274c33",
+                        "tertiary-container": "#386462",
+                        "surface-dim": "#dadad5",
+                        "inverse-primary": "#a7d1af",
+                        "secondary-fixed": "#ffdbd0",
+                        "secondary-fixed-dim": "#e7bdb1",
+                        "on-secondary-fixed-variant": "#5d4037",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#41674b",
+                        "surface": "#fafaf5",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#1f4c4a",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#2c160e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Public Sans"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Public Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background flex min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 left-0 sticky flex flex-col h-full py-6 bg-[#f4f4ef] dark:bg-stone-900 no-border bg-gradient-to-r from-transparent to-[#f4f4ef] dark:to-stone-900">
+<div class="px-8 mb-10">
+<h1 class="text-lg font-black text-[#386641] dark:text-emerald-500 uppercase tracking-tighter">GreenField Operations</h1>
+<p class="text-[10px] font-bold tracking-[0.2em] text-stone-500 uppercase">Admin Module</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center space-x-4 bg-[#ffffff] dark:bg-stone-800 text-[#386641] dark:text-emerald-400 rounded-l-full ml-4 py-3 pl-6 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]">Dashboard</span>
+</a>
+<a class="flex items-center space-x-4 text-stone-600 dark:text-stone-400 py-3 pl-10 hover:text-[#386641] dark:hover:text-emerald-300 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]">Staff Portal</span>
+</a>
+<a class="flex items-center space-x-4 text-stone-600 dark:text-stone-400 py-3 pl-10 hover:text-[#386641] dark:hover:text-emerald-300 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]">Roster</span>
+</a>
+<a class="flex items-center space-x-4 text-stone-600 dark:text-stone-400 py-3 pl-10 hover:text-[#386641] dark:hover:text-emerald-300 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+<span class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]">Clocking Station</span>
+</a>
+<a class="flex items-center space-x-4 text-stone-600 dark:text-stone-400 py-3 pl-10 hover:text-[#386641] dark:hover:text-emerald-300 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]">Payroll Reports</span>
+</a>
+</nav>
+<div class="mt-auto px-4 space-y-4">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold text-[12px] uppercase tracking-widest bg-gradient-to-br from-primary to-primary-container shadow-lg shadow-primary/20 scale-98 active:opacity-80 transition-all">
+                Clock In/Out
+            </button>
+<div class="pt-6 border-t border-outline-variant/10">
+<a class="flex items-center space-x-4 text-stone-500 py-2 pl-6 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[11px] font-bold uppercase tracking-widest">Settings</span>
+</a>
+<a class="flex items-center space-x-4 text-stone-500 py-2 pl-6 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="text-[11px] font-bold uppercase tracking-widest">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar Shell -->
+<header class="flex justify-between items-center px-8 py-4 w-full bg-[#fafaf5] dark:bg-stone-950 font-['Public_Sans'] text-body-md tracking-tight">
+<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-full w-96">
+<span class="material-symbols-outlined text-stone-400 mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder-stone-400" placeholder="Search operations, staff, or reports..." type="text"/>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-stone-500 hover:bg-stone-200 p-2 rounded-full transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-stone-500 hover:bg-stone-200 p-2 rounded-full transition-colors" data-icon="help">help</button>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Manager Profile" class="h-full w-full object-cover" data-alt="Portrait of a farm operations manager in professional outdoor gear, soft natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFwhPxt3SA3_KHgkAQtTAr3Vds5Pr7gceGDK3Jka-1V-GX2ipRP2sjD3zRKw8zpOVG2OAyv-rzfz2Brif77DmqjlI5JOQSNKhHzj_TXZAgh-pxlSyUuDvE3k9CTkkchaPQXuEuGEYJKSl7BUkI77khFPsOaxK0CmBwnYlVbiPHmLRxnnC157n7yc7zNG2GMG8ciQ9UmyN8qjuBVw9x4wVJhXakcGZPTixnxQmhJ-joGdUcl4jai9-AIdSIO5qwQBRwuSE3KbC74605"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 space-y-8 overflow-y-auto">
+<!-- Hero Stats Bento Section -->
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight text-on-surface">Daily Operations Overview</h2>
+<p class="text-stone-500 mt-1">Beerenberg Family Farm — Thursday, Oct 24</p>
+</div>
+<div class="flex space-x-2">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold uppercase tracking-widest rounded-full">System Live</span>
+</div>
+</div>
+<!-- Main Dashboard Grid -->
+<div class="grid grid-cols-2 gap-6">
+<!-- Staff Clocked In Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-b-4 border-primary">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-primary-fixed p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="badge">badge</span>
+</div>
+<span class="text-primary font-bold text-sm">+4 from yesterday</span>
+</div>
+<h3 class="text-stone-500 text-[11px] font-bold uppercase tracking-[0.2em] mb-2">Staff Currently Clocked In</h3>
+<div class="flex items-baseline space-x-2">
+<span class="text-5xl font-black tracking-tighter text-on-surface">42</span>
+<span class="text-stone-400 font-medium">/ 48 scheduled</span>
+</div>
+<div class="mt-6 flex -space-x-2">
+<img alt="Staff" class="h-8 w-8 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="Female farm hand smiling, outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7TRv8qRuKdcLg5xFvhoPs6aIGHSEKJSvESnulVz6QIv6HSVD0cKbhDWaOS4CQwYnaPSDBSyHFpKwsdAoClljgtgxjnaXGKMFuY8VXJLgwOiv1CE1yG767OolpSWWUtB9VucXnKRQOrRy9K1lv93uBTTSYERhVFQKHMLQPKz8G34skn_qXDbwxa5Rp9M4UAJLy_ZAKUl0RXPI4ri2b4vTLKUItvH_D-YC76NFKbCgw-uUBrXVVGDNeJJx4u7piGu_qkILksZ_uQNYA"/>
+<img alt="Staff" class="h-8 w-8 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="Male agricultural worker portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwp0vQL4yvyNH2TFK6mwF8QJuwRfN3fB7PJ6xpY3ScrrpkVdkftzm3glDo7CzmTbQOIboDp2TGZcAmkAIlPCC1CNqTNN60lywIhpLbpQo2bdoxhnrNwzqEFr4ilQ2GqY5JvJ8ChQ85XolijzAeJ6qypFdBcqFE_v08ooUu0y-si1RFL16HenS69k-47BpBIjpX7o1_21F1wZgI2EeOM_nthAlu3Xqp6CJuSRk43xrIWuksYYxiUL3kCXOuAmi0648VndCe5ZnLB8Wy"/>
+<img alt="Staff" class="h-8 w-8 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="Professional female agronomist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6GwB0UMyLeTSAI8X-qghB_F_-y2w9lVzaxxJBL0NQ1sCzkoxAkS_mdjjMS-NBaCj-o-r0Dwpav8Xqgj0ExGvsnTV2iRLgcdD0-5kjfnM1aVbp6yDrqlO70_p_IkweZY3il4FHYETGz57K19CIcOzsWIzZOsjQ9j1_NrCh4dtpvDgzrWmpotNT_P0jdbDY8xyuzRqFOFULgp-xyEB4Dvh8IdFzcBDW_2pV8hYg89gaehNs0nGfVhn1kArUi8sXh6VRpLiTl1Rg41B4"/>
+<div class="h-8 w-8 rounded-full bg-surface-container-high border-2 border-surface-container-lowest flex items-center justify-center text-[10px] font-bold">+39</div>
+</div>
+</div>
+<!-- Active Shifts Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-b-4 border-tertiary">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-tertiary-fixed p-3 rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="potted_plant">potted_plant</span>
+</div>
+<div class="flex items-center text-tertiary text-xs font-bold">
+<span class="h-2 w-2 rounded-full bg-tertiary mr-2"></span>
+                                    Peak Activity
+                                </div>
+</div>
+<h3 class="text-stone-500 text-[11px] font-bold uppercase tracking-[0.2em] mb-2">Today's Active Shifts</h3>
+<div class="flex items-baseline space-x-2">
+<span class="text-5xl font-black tracking-tighter text-on-surface">12</span>
+<span class="text-stone-400 font-medium">Work Groups</span>
+</div>
+<div class="mt-6 space-y-2">
+<div class="flex justify-between text-[11px] font-bold uppercase tracking-widest text-stone-500">
+<span>Harvesting</span>
+<span>85% Capacity</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[85%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Today's Active Shifts List (Asymmetric) -->
+<div class="bg-surface-container-low rounded-2xl p-8">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-xl font-bold tracking-tight">Shift Live Feed</h3>
+<button class="text-primary text-xs font-bold uppercase tracking-widest hover:underline">View Full Roster</button>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="h-12 w-12 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="agriculture">agriculture</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">North Orchard Pruning</p>
+<p class="text-xs text-stone-500">6 Workers • Started 06:00 AM</p>
+</div>
+</div>
+<div class="text-right">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed text-[10px] font-black uppercase rounded-full">In Progress</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="h-12 w-12 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Packing Shed - Line A</p>
+<p class="text-xs text-stone-500">14 Workers • Started 07:30 AM</p>
+</div>
+</div>
+<div class="text-right">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed text-[10px] font-black uppercase rounded-full">In Progress</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center justify-between opacity-60">
+<div class="flex items-center space-x-4">
+<div class="h-12 w-12 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-stone-400" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Logistics &amp; Dispatch</p>
+<p class="text-xs text-stone-500">3 Workers • Starts 11:00 AM</p>
+</div>
+</div>
+<div class="text-right">
+<span class="px-3 py-1 bg-surface-container-high text-stone-500 text-[10px] font-black uppercase rounded-full">Scheduled</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Content -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Pending Exceptions -->
+<div class="bg-error-container/20 rounded-2xl p-6 border-l-4 border-error">
+<div class="flex items-center space-x-2 mb-4 text-error">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<h3 class="font-bold text-sm uppercase tracking-widest">Pending Exceptions</h3>
+</div>
+<p class="text-2xl font-black text-on-surface mb-6">03 <span class="text-sm font-medium text-stone-500">Alerts</span></p>
+<div class="space-y-3">
+<div class="bg-surface-container-lowest p-3 rounded-lg flex items-center space-x-3">
+<div class="h-2 w-2 rounded-full bg-error"></div>
+<div class="flex-1">
+<p class="text-xs font-bold">Marcus Chen</p>
+<p class="text-[10px] text-stone-500 uppercase">Missed Clock-out (Yesterday)</p>
+</div>
+<button class="material-symbols-outlined text-stone-400 hover:text-error" data-icon="edit_square">edit_square</button>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg flex items-center space-x-3">
+<div class="h-2 w-2 rounded-full bg-error"></div>
+<div class="flex-1">
+<p class="text-xs font-bold">Sarah Jenkins</p>
+<p class="text-[10px] text-stone-500 uppercase">Unauthorized Overtime</p>
+</div>
+<button class="material-symbols-outlined text-stone-400 hover:text-error" data-icon="edit_square">edit_square</button>
+</div>
+</div>
+<button class="w-full mt-6 py-3 bg-error text-white text-[11px] font-black uppercase tracking-widest rounded-lg">Resolve All</button>
+</div>
+<!-- Quick Actions Section -->
+<div class="bg-surface-container-high rounded-2xl p-6">
+<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-stone-500 mb-6">Quick Actions</h3>
+<div class="grid grid-cols-1 gap-3">
+<button class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-primary hover:text-on-primary transition-all group">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary" data-icon="person_add">person_add</span>
+<span class="text-sm font-bold">Add New Staff</span>
+</div>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-primary hover:text-on-primary transition-all group">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary" data-icon="payments">payments</span>
+<span class="text-sm font-bold">Generate Pay Run</span>
+</div>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-primary hover:text-on-primary transition-all group">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary" data-icon="event_note">event_note</span>
+<span class="text-sm font-bold">Update Roster</span>
+</div>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-primary hover:text-on-primary transition-all group">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary" data-icon="description">description</span>
+<span class="text-sm font-bold">Compliance Report</span>
+</div>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Operational Map Context -->
+<div class="relative h-48 rounded-2xl overflow-hidden group">
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all z-10"></div>
+<img class="h-full w-full object-cover grayscale-[20%]" data-alt="Lush agricultural landscape with neat rows of crops, aerial view, morning mist" data-location="Hahndorf, Australia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbciqcjHgGbKlzNYnnL-FsnYjaUTnTwJizCU85DoENuKuy2B7DfQRq91u5L04JU9uw2oiat7Bep113zRy72QX0nuKLQtmIkvQ_gCL3gJC6a2gCmM_-ng_Bfr07CpDFX77ERTe738RO2eW_9WQPoi71Y2oxEm4Zbj9vXV2qQpqxLQ2gKHSfPRP21hhGdP6bDdswrUkejCG5CThMNtN70Ltoe0jvsnxaeTszHWSD1zpzsmCqa4_m0jOW1IBxbSBJHLDEhGynbCxUrQfJ"/>
+<div class="absolute bottom-4 left-4 z-20 text-white">
+<p class="text-[10px] font-black uppercase tracking-widest opacity-80">Beerenberg Site Map</p>
+<p class="text-sm font-bold">East Valley Sector A-9</p>
+</div>
+<button class="absolute top-4 right-4 z-20 h-10 w-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB Suppression: Not rendered on Dashboard as per shell rules for focus -->
+</body></html>

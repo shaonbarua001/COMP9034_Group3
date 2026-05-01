@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Beerenberg Family Farm - Clocking Station</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#00210e",
+                        "background": "#fafaf5",
+                        "surface-bright": "#fafaf5",
+                        "inverse-surface": "#2f312e",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#00201f",
+                        "tertiary-fixed-dim": "#a1cfcc",
+                        "primary-container": "#3f6449",
+                        "on-primary-container": "#b5dfbd",
+                        "tertiary-fixed": "#bdebe8",
+                        "on-tertiary-fixed-variant": "#214e4c",
+                        "outline": "#727970",
+                        "primary-fixed": "#c2edca",
+                        "surface-container-high": "#e8e8e3",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c1c9be",
+                        "secondary-container": "#fed3c7",
+                        "on-primary-fixed-variant": "#294e35",
+                        "on-secondary-container": "#795950",
+                        "primary-fixed-dim": "#a7d1af",
+                        "secondary": "#77574d",
+                        "surface-container-low": "#f4f4ef",
+                        "surface-container": "#eeeee9",
+                        "on-surface": "#1a1c19",
+                        "surface-container-highest": "#e3e3de",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#414941",
+                        "on-background": "#1a1c19",
+                        "inverse-on-surface": "#f1f1ec",
+                        "on-tertiary-container": "#b0dfdb",
+                        "surface-variant": "#e3e3de",
+                        "primary": "#274c33",
+                        "tertiary-container": "#386462",
+                        "surface-dim": "#dadad5",
+                        "inverse-primary": "#a7d1af",
+                        "secondary-fixed": "#ffdbd0",
+                        "secondary-fixed-dim": "#e7bdb1",
+                        "on-secondary-fixed-variant": "#5d4037",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#41674b",
+                        "surface": "#fafaf5",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#1f4c4a",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#2c160e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Public Sans"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            gap: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-row overflow-hidden">
+<!-- Sidebar Navigation (Mapped from SideNavBar JSON) -->
+<aside class="h-screen w-64 sticky left-0 flex flex-col py-6 bg-[#f4f4ef] dark:bg-stone-900 no-border bg-gradient-to-r from-transparent to-[#f4f4ef] dark:to-stone-900">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-1">
+<span class="material-symbols-outlined text-[#386641] dark:text-emerald-500 text-3xl">potted_plant</span>
+<h1 class="text-lg font-black text-[#386641] dark:text-emerald-500 leading-none">GreenField Operations</h1>
+</div>
+<p class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px] text-stone-500">Admin Module</p>
+</div>
+<nav class="flex-1">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-4 text-stone-600 dark:text-stone-400 py-3 pl-10 font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px] hover:text-[#386641] dark:hover:text-emerald-300 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-stone-600 dark:text-stone-400 py-3 pl-10 font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px] hover:text-[#386641] dark:hover:text-emerald-300 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Staff Portal</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-stone-600 dark:text-stone-400 py-3 pl-10 font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px] hover:text-[#386641] dark:hover:text-emerald-300 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>Roster</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 bg-[#ffffff] dark:bg-stone-800 text-[#386641] dark:text-emerald-400 rounded-l-full ml-4 py-3 pl-6 font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px] hover:text-[#386641] dark:hover:text-emerald-300 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+<span>Clocking Station</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-stone-600 dark:text-stone-400 py-3 pl-10 font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px] hover:text-[#386641] dark:hover:text-emerald-300 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Payroll Reports</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="px-6 mt-auto border-t border-outline-variant pt-6 opacity-80">
+<ul class="space-y-4">
+<li>
+<a class="flex items-center gap-4 text-stone-600 dark:text-stone-400 font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-stone-600 dark:text-stone-400 font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px]" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span>Support</span>
+</a>
+</li>
+</ul>
+<div class="mt-6 p-4 rounded-xl bg-primary-container text-on-primary-container text-center font-bold tracking-tight">
+                Clock In/Out
+            </div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 h-screen overflow-y-auto p-12 bg-surface">
+<!-- Header Section with Clock -->
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-label-sm font-label uppercase tracking-[0.2em] text-outline mb-2">Morning Shift — Sector 4</h2>
+<h3 class="text-display-lg font-headline font-extrabold tracking-tighter text-on-surface leading-none">Beerenberg Farm</h3>
+</div>
+<div class="text-right">
+<div class="text-[80px] font-headline font-black tracking-tighter text-primary leading-none">
+                    08:42
+                    <span class="text-display-sm font-medium tracking-normal text-outline -ml-2">AM</span>
+</div>
+<p class="text-label-md font-label font-bold text-outline-variant uppercase tracking-widest mt-2">Wednesday, Oct 24</p>
+</div>
+</div>
+<!-- High-Contrast Action Bento Grid -->
+<div class="bento-grid h-[600px]">
+<!-- Clock In Primary Action -->
+<button class="col-span-8 row-span-3 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl flex flex-col justify-center items-center gap-6 shadow-2xl active:scale-95 transition-transform group relative overflow-hidden">
+<div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity"></div>
+<span class="material-symbols-outlined text-[100px]" style="font-variation-settings: 'FILL' 1;">login</span>
+<span class="text-[54px] font-headline font-black tracking-tighter uppercase">Clock In</span>
+<p class="text-primary-fixed text-lg font-medium opacity-80">Shift Start: 08:30 AM</p>
+</button>
+<!-- Status / Biometric Scan Prompt -->
+<div class="col-span-4 row-span-3 bg-surface-container-highest rounded-xl p-8 flex flex-col justify-between border-b-4 border-primary">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">fingerprint</span>
+</div>
+<div>
+<p class="text-label-sm font-bold uppercase tracking-widest text-outline">Scanner Ready</p>
+<p class="text-xl font-bold text-on-surface">Scan ID to Begin</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg text-center">
+<p class="text-body-md text-on-surface-variant font-medium italic">"The best fertilizer is the farmer's footprint."</p>
+</div>
+</div>
+<!-- Log Break Action -->
+<div class="col-span-4 row-span-3 bg-surface-container-low rounded-xl p-8 flex flex-col justify-between active:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary text-5xl">coffee</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-tertiary transition-colors">expand_more</span>
+</div>
+<div>
+<h4 class="text-2xl font-black text-on-surface tracking-tight uppercase">Log Break</h4>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-white text-on-surface rounded-full text-sm font-bold border border-outline-variant">Tea Break</span>
+<span class="px-4 py-2 bg-white text-on-surface rounded-full text-sm font-bold border border-outline-variant">Lunch</span>
+<span class="px-4 py-2 bg-white text-on-surface rounded-full text-sm font-bold border border-outline-variant">Safety Check</span>
+</div>
+</div>
+</div>
+<!-- Clock Out Action -->
+<button class="col-span-4 row-span-3 bg-secondary text-on-secondary rounded-xl flex flex-col justify-center items-center gap-4 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-5xl">logout</span>
+<span class="text-3xl font-black tracking-tight uppercase">Clock Out</span>
+</button>
+<!-- View Roster Action -->
+<button class="col-span-4 row-span-3 bg-surface-container-lowest rounded-xl p-8 flex items-center justify-between group shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-6">
+<div class="w-20 h-20 rounded-xl overflow-hidden grayscale contrast-125">
+<img class="w-full h-full object-cover" data-alt="Close-up of a rustic wooden calendar with modern typography, natural morning light hitting the surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4qIfjrSz2k6gyN_-cXhlQYWEnQIBfCHHOnpig5OsE3LIuRVjzs76WUO0XpXGzsycC-PH22NAkhpadlhgRLgfpNq2LJl6S1u9o1Pn1w13bRSnubvPehFYliCmOAJcuBvtKYswb8uLokxOZHEt_O2lAVjY0YBcfDJAn8sUOuRBKTyOaX7JQC-F5d7KgesBYL3ShfWWf_srm-b3QpH7Zh-yjjWU4Tlt9Vza_UV6hx0okidAYr2cj8WdOapgrw4GOKLai0zF8a69yxLNi"/>
+</div>
+<div>
+<h4 class="text-2xl font-black text-on-surface tracking-tight uppercase leading-none mb-1">My Roster</h4>
+<p class="text-outline font-medium">View upcoming shifts</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Recent Activity Table (No Borders, Spacing instead) -->
+<div class="mt-16">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-headline-sm font-bold tracking-tight text-on-surface">Recent Terminal Activity</h3>
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-label-md font-bold uppercase tracking-wider text-outline">Active</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+<span class="text-label-md font-bold uppercase tracking-wider text-outline">Idle</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Entry 1 -->
+<div class="flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling middle-aged farm manager with sun-kissed skin wearing a flannel shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByS0QHLy_gMFVUZNme-CxSq91kgRvA-MxtGAgdzXFuEs49QMY7dXDVbh2CBfXOhpaROzj-bg_n2j6gd0o8yS3bfK5P57E1dmTBwXZ087XnxzZKFNb8dzVInm2FGKpwDtjt80ewuYiJ3RlwkNHqqWVO5pybUvG5bA2Q47ZRtEraHWKSg8eiGKUffZPwtLDyFehF_42RovQgLXjS6xN2ILHhMmH38r3GAsfO5gfMiOvkbaQU0SeZ-YAggU5jAjtsWH9QPQcofCBDLy-T"/>
+</div>
+<div>
+<p class="text-lg font-bold text-on-surface leading-tight">Arthur J. Miller</p>
+<p class="text-label-sm font-medium text-outline">Picking Crew Lead</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-black text-primary uppercase">Clocked In</p>
+<p class="text-label-sm font-bold text-outline-variant">08:14 AM</p>
+</div>
+</div>
+<!-- Entry 2 -->
+<div class="flex items-center justify-between p-6 bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a young woman professional wearing an outdoor utility vest and cap" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjrobV0u9i7VRVWW28RSLRwQBVSezl8Ll1HqImaVT0fLAX1OaQ_oXy_qWOhagDzEFSnBue2iPnGJefztL59RwtDCGLXj6hHOGbl_mUSbMF4ke76N30qLBbdu7qczhzfn0tSK5aPsvD973OOkuwHxK06q4T_PwqkZDI7FEhsazRPp9dyspSuwI00sYP1P0z6JrCFqnp4VUudCCNsQqQ8GCm0sHmPWEt9IrQ5SpmotXo2_Z1CAbAg3EZnUWVj_ycJ9EoA4UkDnt3hoxm"/>
+</div>
+<div>
+<p class="text-lg font-bold text-on-surface leading-tight">Sarah Thompson</p>
+<p class="text-label-sm font-medium text-outline">Irrigation Specialist</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-black text-on-surface-variant uppercase">On Break</p>
+<p class="text-label-sm font-bold text-outline-variant">Tea Break • 08:31 AM</p>
+</div>
+</div>
+<!-- Entry 3 -->
+<div class="flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Outdoor portrait of a worker in his 30s with a short beard and high visibility vest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqXZvWMfAL3L-9VygLFtMFLY33lJHtw9UxYhjFS4L7jhzVGixL37LyRKu44RLoDrm4S-m6BYlKq39hfUUOjeO4ljIoyyxoL8P246C03Hx7NDzJD7N6CkcXbbRFL1uSlBFwnGkhAeiybkigVegrvENm8yCjSldmEUr3JmjfTNglXiK8GfwSQmRm7nt3GJycIxQ4Y-xPB7NA8cT2-d9zWOOTYsw2NHrvDGdiofbJI6fuXwRbgdV9lIj7nOjCpgVnFAkWpg87_bGn4zgr"/>
+</div>
+<div>
+<p class="text-lg font-bold text-on-surface leading-tight">Liam Vance</p>
+<p class="text-label-sm font-medium text-outline">Logistics Driver</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-black text-primary uppercase">Clocked In</p>
+<p class="text-label-sm font-bold text-outline-variant">07:55 AM</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Notification Overlay (Glassmorphism effect) -->
+<div class="fixed bottom-8 right-8 bg-surface-variant/70 backdrop-blur-[20px] p-6 rounded-xl shadow-2xl border border-white/20 max-w-sm flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary text-2xl">info</span>
+<div>
+<p class="text-on-surface font-bold text-sm tracking-tight">Weather Alert</p>
+<p class="text-on-surface-variant text-xs leading-relaxed mt-1">High heat index expected in Sector 4 after 11:00 AM. Ensure mandatory hydration breaks are logged.</p>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#00210e",
+                    "background": "#fafaf5",
+                    "surface-bright": "#fafaf5",
+                    "inverse-surface": "#2f312e",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#00201f",
+                    "tertiary-fixed-dim": "#a1cfcc",
+                    "primary-container": "#3f6449",
+                    "on-primary-container": "#b5dfbd",
+                    "tertiary-fixed": "#bdebe8",
+                    "on-tertiary-fixed-variant": "#214e4c",
+                    "outline": "#727970",
+                    "primary-fixed": "#c2edca",
+                    "surface-container-high": "#e8e8e3",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#c1c9be",
+                    "secondary-container": "#fed3c7",
+                    "on-primary-fixed-variant": "#294e35",
+                    "on-secondary-container": "#795950",
+                    "primary-fixed-dim": "#a7d1af",
+                    "secondary": "#77574d",
+                    "surface-container-low": "#f4f4ef",
+                    "surface-container": "#eeeee9",
+                    "on-surface": "#1a1c19",
+                    "surface-container-highest": "#e3e3de",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#414941",
+                    "on-background": "#1a1c19",
+                    "inverse-on-surface": "#f1f1ec",
+                    "on-tertiary-container": "#b0dfdb",
+                    "surface-variant": "#e3e3de",
+                    "primary": "#274c33",
+                    "tertiary-container": "#386462",
+                    "surface-dim": "#dadad5",
+                    "inverse-primary": "#a7d1af",
+                    "secondary-fixed": "#ffdbd0",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#41674b",
+                    "surface": "#fafaf5",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#1f4c4a",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#2c160e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Public Sans"],
+                    "body": ["Public Sans"],
+                    "label": ["Public Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-primary-gradient {
+            background: linear-gradient(135deg, #274c33 0%, #3f6449 100%);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #c1c9be; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 left-0 sticky flex flex-col h-full py-6 bg-[#f4f4ef] dark:bg-stone-900 no-border bg-gradient-to-r from-transparent to-[#f4f4ef] dark:to-stone-900">
+<div class="px-8 mb-10">
+<h1 class="text-lg font-black text-[#386641] dark:text-emerald-500 uppercase tracking-tighter">GreenField Operations</h1>
+<p class="font-['Public_Sans'] font-medium tracking-wide uppercase text-[10px] text-stone-500">Admin Module</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center text-stone-600 dark:text-stone-400 py-3 pl-10 font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px] hover:text-[#386641] dark:hover:text-emerald-300 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center bg-[#ffffff] dark:bg-stone-800 text-[#386641] dark:text-emerald-400 rounded-l-full ml-4 py-3 pl-6 font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px] translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="group">group</span>
+                Staff Portal
+            </a>
+<a class="flex items-center text-stone-600 dark:text-stone-400 py-3 pl-10 font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px] hover:text-[#386641] dark:hover:text-emerald-300 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="calendar_month">calendar_month</span>
+                Roster
+            </a>
+<a class="flex items-center text-stone-600 dark:text-stone-400 py-3 pl-10 font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px] hover:text-[#386641] dark:hover:text-emerald-300 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="timer">timer</span>
+                Clocking Station
+            </a>
+<a class="flex items-center text-stone-600 dark:text-stone-400 py-3 pl-10 font-['Public_Sans'] font-medium tracking-wide uppercase text-[12px] hover:text-[#386641] dark:hover:text-emerald-300 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="analytics">analytics</span>
+                Payroll Reports
+            </a>
+</nav>
+<div class="mt-auto px-4 space-y-4">
+<button class="w-full bg-primary-gradient text-on-primary py-3 px-4 rounded-md font-bold text-sm shadow-lg hover:scale-98 transition-all active:opacity-80">
+                Clock In/Out
+            </button>
+<div class="space-y-1">
+<a class="flex items-center text-stone-600 dark:text-stone-400 py-2 pl-6 font-['Public_Sans'] font-medium tracking-wide uppercase text-[10px] hover:text-[#386641] transition-all" href="#">
+<span class="material-symbols-outlined text-sm mr-2" data-icon="settings">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center text-stone-600 dark:text-stone-400 py-2 pl-6 font-['Public_Sans'] font-medium tracking-wide uppercase text-[10px] hover:text-[#386641] transition-all" href="#">
+<span class="material-symbols-outlined text-sm mr-2" data-icon="contact_support">contact_support</span>
+                    Support
+                </a>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="w-full top-0 flex justify-between items-center px-8 py-4 w-full bg-[#fafaf5] dark:bg-stone-950 sticky z-10">
+<div class="flex items-center gap-6">
+<span class="text-xl font-bold tracking-tighter text-[#386641] dark:text-emerald-500">The Cultivated Horizon</span>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-md focus:ring-2 focus:ring-primary w-64 text-sm transition-all font-['Public_Sans'] tracking-tight" placeholder="Search staff records..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full text-stone-500 hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full text-stone-500 hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="flex items-center gap-3 pl-4 ml-4 border-l border-outline-variant/30">
+<img alt="Manager Profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="close-up portrait of a professional farm manager with a friendly expression in outdoor daylight setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANqZBalu0OC0l4FF9Rav0rNvTwVb0pJfMyP53uRkydHzaUd1_1wu0m6PB2elrzlGi0nnbU4N1TBXwQDWVXsVNrvwGPZ0f7UMTGgYBwTRHi_h8cg9Y-4ehYxjirm3Lttx4j_QXYYF_yEwekN3N8ESS_VtoUAikcz1N9pc6_MxZQkq3KVgjT68zlMH0gkWCk-_ykuvw-docFmZdzoOwlWplZEeOCUArWiqZTjaexdEJy4Hm56RQiPPk0755EdsuPdYJll8D3ux3eGl4v"/>
+<div class="hidden sm:block">
+<p class="text-sm font-bold text-on-surface">Benjamin Paech</p>
+<p class="text-[10px] uppercase tracking-wider text-stone-500">Operations Lead</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 space-y-8 overflow-y-auto">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-end md:items-center gap-4">
+<div>
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface">Staff Management</h2>
+<p class="text-stone-500 mt-1 max-w-lg">Orchestrate your workforce across the Beerenberg estate. Manage contracts, payroll settings, and biometric identities.</p>
+</div>
+<button class="bg-primary-gradient text-on-primary px-6 py-3 rounded-md font-bold flex items-center gap-2 shadow-xl hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+                    Onboard New Staff
+                </button>
+</section>
+<!-- Stats Grid / Tonal Layering -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_8px_40px_-12px_rgba(0,0,0,0.08)]">
+<p class="text-[10px] uppercase font-bold tracking-[0.1em] text-stone-400 mb-2">Total Workforce</p>
+<p class="text-3xl font-black tracking-tighter text-primary">142</p>
+<div class="mt-4 flex gap-2">
+<span class="px-2 py-1 bg-primary-fixed text-on-primary-fixed text-[10px] font-bold rounded">82% Active</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<p class="text-[10px] uppercase font-bold tracking-[0.1em] text-stone-400 mb-2">Payroll Frequency</p>
+<p class="text-3xl font-black tracking-tighter text-secondary">Weekly</p>
+<p class="mt-4 text-[10px] text-stone-500">Next cycle: Friday, May 24</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<p class="text-[10px] uppercase font-bold tracking-[0.1em] text-stone-400 mb-2">Biometrics Pending</p>
+<p class="text-3xl font-black tracking-tighter text-tertiary">14</p>
+<p class="mt-4 text-[10px] text-stone-500">Requires Admin Attention</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border-t-4 border-primary">
+<p class="text-[10px] uppercase font-bold tracking-[0.1em] text-stone-400 mb-2">Harvest Season</p>
+<p class="text-3xl font-black tracking-tighter text-on-surface">Peak</p>
+<p class="mt-4 text-[10px] text-stone-500">Labor efficiency: High</p>
+</div>
+</div>
+<!-- Main Table Section -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)]">
+<div class="px-8 py-6 bg-surface-container-high/50 flex justify-between items-center">
+<h3 class="text-lg font-bold tracking-tight">Active Personnel Directory</h3>
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container-lowest rounded hover:bg-white transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+<button class="p-2 bg-surface-container-lowest rounded hover:bg-white transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low text-[10px] uppercase font-bold tracking-widest text-stone-500">
+<tr>
+<th class="px-8 py-4">Employee ID</th>
+<th class="px-4 py-4">Name &amp; Role</th>
+<th class="px-4 py-4">Contract Type</th>
+<th class="px-4 py-4">Rates</th>
+<th class="px-8 py-4 text-right">Identity &amp; Biometrics</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-stone-100">
+<!-- Staff Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<span class="font-mono text-xs text-stone-400">#BB-0421</span>
+</td>
+<td class="px-4 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold">AJ</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Alexander Jenkins</p>
+<p class="text-xs text-stone-500">Lead Field Supervisor</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-6">
+<span class="px-2.5 py-1 bg-surface-container-high text-on-surface text-[10px] font-bold rounded uppercase tracking-wider">Full Time</span>
+</td>
+<td class="px-4 py-6">
+<button class="text-primary text-xs font-bold hover:underline flex items-center gap-1">
+                                    $45.50 / $68.25
+                                    <span class="material-symbols-outlined text-[14px]" data-icon="edit_note">edit_note</span>
+</button>
+</td>
+<td class="px-8 py-6 text-right">
+<div class="flex items-center justify-end gap-3">
+<span class="text-[10px] text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="fingerprint" data-weight="fill">fingerprint</span> Registered
+                                    </span>
+<button class="p-1.5 text-stone-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Staff Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<span class="font-mono text-xs text-stone-400">#BB-0582</span>
+</td>
+<td class="px-4 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary-container font-bold">LM</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Lucia Morales</p>
+<p class="text-xs text-stone-500">Seasonal Harvester</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-6">
+<span class="px-2.5 py-1 bg-secondary-fixed text-on-secondary-fixed-variant text-[10px] font-bold rounded uppercase tracking-wider">Casual</span>
+</td>
+<td class="px-4 py-6">
+<button class="text-primary text-xs font-bold hover:underline flex items-center gap-1">
+                                    $28.20 / $42.30
+                                    <span class="material-symbols-outlined text-[14px]" data-icon="edit_note">edit_note</span>
+</button>
+</td>
+<td class="px-8 py-6 text-right">
+<div class="flex items-center justify-end gap-3">
+<button class="px-3 py-1.5 border border-primary text-primary text-[10px] font-black uppercase tracking-widest rounded hover:bg-primary-container hover:text-white transition-all">
+                                        Register Card
+                                    </button>
+<button class="p-1.5 text-stone-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Staff Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<span class="font-mono text-xs text-stone-400">#BB-0391</span>
+</td>
+<td class="px-4 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-bold">SD</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Samuel Dawson</p>
+<p class="text-xs text-stone-500">Quality Control Specialist</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-6">
+<span class="px-2.5 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold rounded uppercase tracking-wider">Part Time</span>
+</td>
+<td class="px-4 py-6">
+<button class="text-primary text-xs font-bold hover:underline flex items-center gap-1">
+                                    $32.00 / $48.00
+                                    <span class="material-symbols-outlined text-[14px]" data-icon="edit_note">edit_note</span>
+</button>
+</td>
+<td class="px-8 py-6 text-right">
+<div class="flex items-center justify-end gap-3">
+<span class="text-[10px] text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="nfc" data-weight="fill">nfc</span> SmartCard Active
+                                    </span>
+<button class="p-1.5 text-stone-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Detail Modal Preview (Integrated as an asymmetric drawer) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="bg-surface-container-low p-8 rounded-2xl flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden">
+<img alt="Lucia Morales" class="w-full h-full object-cover" data-alt="medium shot of a focused female agriculture worker with a neutral expression in a natural farm background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE5s_LMtsLHv5aujbY7NwvC2V4bqlyzKWE4cUfxGF6n4G4uDd5J1ysgIG7MwvGoSDWy9oa_rlOsBCKPiqGstSuELIVO00v0cQnXbz2sG6SaTmCUQ0svoyQ90UtgkR3jj3hdzy1qlkN6NGuXaOSGZ0MSXyjjRXsCdawNTfDjkCAp6euwR6FT0GEc11rnwiX2qrpAb3g0nYXly33s6XWsNdstuxf2x8dK-aa5cHduE251UQkCkaRYlDD-Ir8C6BmGreVbiYjXx9GtFKK"/>
+</div>
+<div>
+<h4 class="text-2xl font-bold">Lucia Morales</h4>
+<p class="text-stone-500 text-sm">Contract ID: BB-0582 • Active since April 2023</p>
+</div>
+</div>
+<div class="flex gap-2">
+<span class="bg-error/10 text-error px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="warning">warning</span> Missing Biometric
+                             </span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 bg-surface-container-highest p-8 rounded-2xl border-t-4 border-secondary">
+<h5 class="text-sm font-bold uppercase tracking-widest mb-6">Pay Rate Configuration</h5>
+<div class="space-y-6">
+<div>
+<label class="block text-[10px] font-black text-stone-400 uppercase tracking-[0.1em] mb-2">Standard Hourly Rate</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-stone-500 font-bold">$</span>
+<input class="w-full bg-white border-none rounded-md pl-8 py-3 text-lg font-black text-primary focus:ring-2 focus:ring-primary shadow-sm" type="text" value="28.20"/>
+</div>
+</div>
+<div>
+<label class="block text-[10px] font-black text-stone-400 uppercase tracking-[0.1em] mb-2">Overtime Multiplier (1.5x)</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-stone-500 font-bold">$</span>
+<input class="w-full bg-white border-none rounded-md pl-8 py-3 text-lg font-black text-on-surface focus:ring-2 focus:ring-primary shadow-sm" readonly="" type="text" value="42.30"/>
+</div>
+</div>
+<div class="pt-4 flex gap-3">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded font-bold text-sm hover:opacity-90 transition-opacity">
+                                Save Rates
+                            </button>
+<button class="px-4 py-3 bg-white text-stone-600 rounded font-bold text-sm shadow-sm hover:bg-stone-50">
+                                History
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action for Mobile (Hidden on Web as per rules) -->
+<div class="fixed bottom-8 right-8 md:hidden">
+<button class="w-14 h-14 bg-primary-gradient text-on-primary rounded-full shadow-2xl flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</body></html>
