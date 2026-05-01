@@ -1,4 +1,0 @@
-{
-  "buildCommand": "pnpm --filter @farm/web build",
-  "outputDirectory": "apps/web/test"
-}
