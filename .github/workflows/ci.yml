@@ -1,0 +1,45 @@
+# ci pipeline for github-actions
+
+name: Node CI
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: "pnpm" # Cache pnpm dependencies
+          
+      # - name: Install pnpm
+      #   uses: pnpm/action-setup@v4
+
+      # - name: Install & Build
+      #   run: |
+      #     pnpm install
+      #     pnpm run build
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Run tests
+        run: pnpm test
+        
