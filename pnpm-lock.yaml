@@ -18,7 +18,7 @@ importers:
   apps/api:
     dependencies:
       '@supabase/supabase-js':
-        specifier: ^2.49.8
+        specifier: ^2.105.1
         version: 2.105.1
       bcryptjs:
         specifier: ^2.4.3
