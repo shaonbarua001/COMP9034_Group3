@@ -6,7 +6,7 @@ import { PostgresDb } from './db/postgres.js';
 import { loadSupabaseConfig, resolveDbConnectionString } from './lib/runtime-config.js';
 
 const basePath = process.env.API_BASE_PATH ?? '/api/v1';
-const serverPort = Number(process.env.API_PORT ?? 4000);
+const serverPort = Number(process.env.API_PORT ?? 4000, "0.0.0.0");
 const serverHost = process.env.API_HOST ?? '0.0.0.0';
 const authSecret = process.env.API_AUTH_SECRET ?? 'local-dev-secret';
 const supabase = loadSupabaseConfig(process.env);
